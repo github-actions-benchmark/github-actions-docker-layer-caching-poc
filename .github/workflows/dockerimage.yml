@@ -75,4 +75,14 @@ jobs:
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
       - run: docker build . -t thing
-        
+  build_with_gpr2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: whoan/docker-build-with-cache-action@v5
+        with:
+          username: ahdbilal
+          password: "${{ secrets.GITHUB_TOKEN }}"
+          registry: docker.pkg.github.com
+          #or
+          #registry: ghcr.io
+          image_name: thing
