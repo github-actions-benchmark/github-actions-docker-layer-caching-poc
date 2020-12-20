@@ -104,8 +104,9 @@ jobs:
           push: false
           tags: thing
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
   build_cache_buildx_gpr:
+    if: 1==2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
