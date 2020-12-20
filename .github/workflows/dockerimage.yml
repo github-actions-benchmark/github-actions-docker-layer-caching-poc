@@ -121,6 +121,6 @@ jobs:
         with:
           push: true
           tags: thing
-          cache-from: type=registry,ref=user/app:latest
+          cache-from: type=registry,ref=thing
           cache-to: type=inline
     
